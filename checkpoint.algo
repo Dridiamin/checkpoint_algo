@@ -1,0 +1,38 @@
+ALGORITHM solution
+VAR
+    setone, settwo: array of INTEGER;
+    i, counter : INTEGER:=0;
+    htab :=htable INTEGER;
+    sethtabkeys: array od INTEGER;
+    sum:=0;
+BEGIN
+    FOR i FROM 0 TO setone.length-1  DO
+        IF (htab.search(setone[i])=true) THEN
+            counter:=htab.get(setone[i]);
+            htab.insert(setone[i,counter+1]);
+        ELSE 
+            htab.insert(setone[i],1),
+        END_IF
+    END_FOR
+
+
+    FOR i FROM 0 TO settwo.length-1 DO
+		IF (htab.search(setTwo[i]) = TRUE) THEN
+			counter := htab.get(setTwo[i]);
+			htab.insert(settwo[i],counter+1);
+		ELSE
+			htab.insert(settwo[i],1);
+		END_IF
+    END_FOR
+
+   sethtabkeys:= htab.keys;
+
+   FOR i FROM 0 TO sethtabKeys.length-1 DO
+		IF(htab.get(sethtabKeys[i] = 2))
+			sum := sum + sethtabKeys[i];
+		END_IF
+	END_FOR
+	
+	WRITE(sum);
+
+END
